@@ -39,7 +39,6 @@ h3.title a {
 
 // post list
 .post-list {
-    text-align: left;
 	ul {
 		list-style: none;
 		padding-left: 0;
@@ -89,16 +88,18 @@ figcaption {
 
 // links
 a {
-  transition: color .4s;
+  //transition: color .4s;
   color: $color_shark;
   &:link {
-  	color: $color_shark;
+		text-decoration:none;
+  	color: $color_link;
   }
   &:visited {
-  	color: $color_tuatara;
+  	color: $color-link_visited;
   }
   &:hover {
-  	color: $red;
+		text-decoration:underline;
+  	//color: $red;
   }
   &:active {
   	transition: color .3s;
@@ -131,6 +132,15 @@ li .highlight pre {
 // table
 table {
 	width: 100%;
+	border-collapse: collapse;
+  border-spacing: 0;
+  border:1px solid #000000;
+}
+th{
+    border:1px solid #000000;
+}
+td{
+    border:1px solid #000000;
 }
 
 // notice
