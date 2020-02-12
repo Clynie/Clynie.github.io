@@ -33,6 +33,9 @@ convert $1 -resize 72x72 assets/img/favicons/apple-icon-precomposed.png
 convert $1 assets/img/favicons/logo.png
 convert $1 assets/img/logo.png
 ```
+However, the convert do not work on my MacOs, and I, personally, prefer to `sips`, more information can be seen in my [note](https://clynie.github.io/MacOs_Command/)
+
+
 
 3. Add **Notes** in Contents:
 
