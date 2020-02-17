@@ -6,6 +6,16 @@ excerpt: "By analyzing a number of very high resolution, nonhydrostatic experime
 papers: true
 ---
 
+本工作的延伸：
+* [The Life Cycle of the North Atlantic Storm Track](https://journals.ametsoc.org/doi/abs/10.1175/JAS-D-14-0082.1)
+* [Sensitivities and mechanisms of the zonal mean atmospheric circulation response to tropical warming](https://journals.ametsoc.org/doi/full/10.1175/JAS-D-12-0298.1)
+* [A New Look at the Pacific Storm Track Variability: Sensitivity to Tropical SSTs and to Upstream Seeding](https://journals.ametsoc.org/doi/full/10.1175/JAS3428.1)
+* [Poleward migration of eddy‐driven jets](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/2015MS000481)
+* [Downstream modulation of North Pacific atmospheric river activity by East Asian cold surges](https://doi.org/10.1029/2011GL049462)
+* [Intermediate frequency atmospheric disturbances: A dynamical bridge connecting western U.S. extreme precipitation with East Asian cold surges](https://doi.org/10.1002/2013JD021209)
+
+
+
 ### Schematic diagram of the winter jet over the Pacific Ocean for the ENSO phases and normal years
 
 ![Schematic diagram of the winter jet over the Pacific Ocean for the ENSO phases and normal years.](https://github.com/Clynie/Clynie.github.io/blob/master/_img/wave_breaking.jpg?raw=true)
