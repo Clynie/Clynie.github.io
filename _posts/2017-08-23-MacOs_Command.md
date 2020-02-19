@@ -1,7 +1,7 @@
 ---
 layout: post-for-notes
 title:  "The Command in MacOs"
-date:   2018-08-23
+date:   2018-08-23 16:05:22 +0800
 excerpt: "Command Finding Log"
 notes: true
 ---
@@ -61,3 +61,11 @@ sips除了能转换图片格式以外，还可以对图片进行调整大小(res
 	* 例子: `sips -f horizontal house.jpg`
 	* 图片会水平翻转。如果使用vertical, 则会垂直翻转
 * **注意**，上述命令会**直接修改原图片**，如果要保留原图片，则可以加上__–out__ 参数指定输出的文件名。比如`sips -f horizontal house.jpg --out house_horizontal.jpg`
+
+
+
+
+
+
+
+
