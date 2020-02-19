@@ -130,8 +130,21 @@ def addcyclic(*arr,**kwargs):
 	else:
 	    # return list(map(_addcyclic,arr[:-1]) + [_addcyclic_lon(arr[-1])])
 	    return list(map(_addcyclic,arr[:-1])) + [_addcyclic_lon(arr[-1])]
+
 ```
 
+## 添加环境变量
 
+```bash
+# 添加环境变量：
+$ conda create --name Python34 python=3.4
+# 打开命令行，进入到要添加的virtual env中，如source activate env01
+$ conda activate Python34
+# 安装ipykernel，如
+$ python -m pip install ipykernel
+# 添加当前环境下的python到jupyter notebook中的kernel里，如
+$ ipython kernel install --user --name=kernel_env01
+# 启动jupyter notebook之后即可在可选kernels中看到kernel_env01
+```
 
 
