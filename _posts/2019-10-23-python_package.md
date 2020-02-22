@@ -2,7 +2,7 @@
 layout: post-for-notes
 title:  "记录一下我在安装，更新以及使用Python过程中遇到的问题"
 date:   2018-08-23
-excerpt: "其中目前包括了matplotlib, numpy..."
+excerpt: "其中目前包括了matplotlib, numpy, jupyter, eofs.iris"
 notes: true
 ---
 
@@ -146,5 +146,40 @@ $ python -m pip install ipykernel
 $ ipython kernel install --user --name=kernel_env01
 # 启动jupyter notebook之后即可在可选kernels中看到kernel_env01
 ```
+
+## eof.iris
+
+针对气象数据来说，`eofs`提供了针对`cube`数据的`eof`处理
+
+### 安装
+
+```bash
+# eofs can be installed for all platforms using conda:
+conda install -c conda-forge eofs
+
+# or using pip:
+python -m pip install eofs
+```
+
+
+### 使用
+
+```python
+import iris
+from eofs.iris import Eof
+
+# read a spatial-temporal field, time must be the first dimension
+sst = iris.load_cube('sst_monthly.nc')
+
+# create a solver class, taking advantage of built-in weighting
+solver = Eof(sst, weights='coslat')
+
+# retrieve the first two EOFs from the solver class
+eofs = solver.eofs(neofs=2)
+```
+
+
+
+
 
 
