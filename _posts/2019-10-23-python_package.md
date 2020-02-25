@@ -16,7 +16,7 @@ notes: true
 	ValueError: Object arrays cannot be loaded when allow_pickle=False
 	```
 There are __Two__ solutions:
-	1. np.load(file) ` to `np.load(file, allow_pickle=False)`
+	1. np.load(file) ` to `np.load(file, allow_pickle=True)`
 	2. Downgrade the numpy as `pip install numpy==1.16.2`
 
 
