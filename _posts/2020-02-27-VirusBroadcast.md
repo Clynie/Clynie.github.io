@@ -61,8 +61,60 @@ OK，那我们开始学习吧：
 
 ![https://scitools.com/](https://github.com/Clynie/Clynie.github.io/blob/master/_img/VirusBroadcast-Main-main.png?raw=true)
 
+## 分析
 
 
+首先了解Java基本的原理是(举例)：
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+```
+
+也就是说基本上Java，类似于python的定义，
+
+1. 首先import *
+2. 然后定义class，`public class HelloWorld {}`
+3. 在class中定义function,`public static void main(String[] args) {}`
+
+在主程序中是这样的：
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        initHospital();
+        initPanel();
+        initInfected();
+    }
+
+    /**
+     * 初始化画布
+     */
+    private static void initPanel() {
+    }
+
+    private static int hospitalWidth;
+
+    /**
+     * 初始化医院参数
+     */
+    private static void initHospital() {
+    }
+
+    /**
+     * 初始化初始感染者
+     */
+    private static void initInfected() {
+        }
+    }
+}
+```
+
+### 初始化画布
 
 
 
