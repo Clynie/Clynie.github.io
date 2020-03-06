@@ -114,7 +114,119 @@ public class Main {
 }
 ```
 
+这里另外加个小知识，因为本人从头开始学习`Java`所以很多东西是边看边编边学，所以首先说明一下`static`,`public`和`private`的区别：
+
+* `static`：静态修饰符，被static修饰的变量和方法类似于全局变量和全局方法，可以在不创建对象时调用，当然也可以在创建对象之后调用。
+* `public`：声明当前被修饰的对象、方法、变量为公有的。
+* `private`: ：声明当前被修饰的变量、方法为私有的。
+* `private static`: 修饰的属性仅仅可以被静态方法调用，但是只能被本类中的方法（可以是非静态的）调用，在外部创建这个类的对象或者直接使用这个类访问都是非法的。
+
+
+
+
 ### 初始化画布
+
+1. 这里采用的是`paint(Graphics g)`
+一般来说: java绘图时，最常使用到的就是`paint(Graphics g){...内容...}`方法获取画笔，然后利用`JPanel`等容器作为画布,在`JFrame`内呈现出内容，很多情况下这种方式都还是很实用，下附实例：
+
+
+```java
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+ 
+//以下为一个框体小程序
+public class _001{// _001为自定义的主类名
+	public static void main(String[] args) {
+	JFrame newFrame=new JFrame("funBox");
+	newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);          //定义JFrame关闭时的操作（必需），有效避免不能关闭后台当前框体进程的问题   
+	newFrame.setSize(400, 400);         //定义JFrame的相关属性
+	newFrame.setLocation(200, 200);
+	newFrame.setVisible(true); 
+	newThread n1= new newThread();           //线程的运行，将需要呈现的图像添加进JFrame中
+	newFrame.add(n1);
+	Thread t1 = new Thread(n1);
+	t1.start();
+	 
+	}
+}
+ 
+class newThread extends JPanel implements Runnable //Java类中只能继承一个类，但是可以实现多个接口，此处newThread 为自定义新建类名
+{
+	Graphics g;    //此处定义Graphics对象 g;
+	private static final long serialVersionUID = 1L;   
+	public void run()   //进程run()方法重写
+	{  
+		g=getGraphics();   //Graphics对象 g的获取
+		for(int i=0;i<100;)
+		{
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}  
+			this.update(g) ;       //update()方法的调用，刷新图像，使得图像不会重叠显现   
+			g.setColor(Color.green);   //绘制（0，0）开始移动的20*20绿色小块
+			g.fillRect(i, i, 20, 20);
+			i+=20;
+		} 
+	}
+}
+```
+
+2. 有的时候，需要`Graphics`对象进行更多的操作（例如下面需要在`run()`中调用`Graphics`对象）而不能使用`paint(Graphics g)`方法，这个时候，就得获取自己定义的`Graphics`对象来完成需求，下附实例：
+
+
+```java
+package ?; //?为自定义建包名
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+ 
+//以下为一个框体小程序
+public class _001// _001为自定义的主类名
+{
+	public static void main(String[] args) {
+		JFrame newFrame=new JFrame("funBox");
+		newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);          //定义JFrame关闭时的操作（必需），有效避免不能关闭后台当前框体进程的问题   
+		newFrame.setSize(400, 400);         //定义JFrame的相关属性
+		newFrame.setLocation(200, 200);
+		newFrame.setVisible(true); 
+		newThread n1= new newThread();           //线程的运行，将需要呈现的图像添加进JFrame中
+		newFrame.add(n1);
+		Thread t1 = new Thread(n1);
+		t1.start();
+	}
+}
+ 
+class newThread extends JPanel implements Runnable //Java类中只能继承一个类，但是可以实现多个接口，此处newThread 为自定义新建类名
+{
+	Graphics g;    //此处定义Graphics对象 g;
+	private static final long serialVersionUID = 1L;   
+	public void run()   //进程run()方法重写
+	{  
+		g=getGraphics();   //Graphics对象 g的获取
+		for(int i=0;i<100;)
+		{
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}  
+			this.update(g) ;       //update()方法的调用，刷新图像，使得图像不会重叠显现   
+			g.setColor(Color.green);   //绘制（0，0）开始移动的20*20绿色小块
+			g.fillRect(i, i, 20, 20);
+			i+=20;
+		} 
+	}
+}
+```
 
 
 ### 初始化医院参数
