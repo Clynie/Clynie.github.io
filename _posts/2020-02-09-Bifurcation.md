@@ -19,7 +19,7 @@ papers: true
 * [Downstream modulation of North Pacific atmospheric river activity by East Asian cold surges](https://doi.org/10.1029/2011GL049462)
 * [Intermediate frequency atmospheric disturbances: A dynamical bridge connecting western U.S. extreme precipitation with East Asian cold surges](https://doi.org/10.1002/2013JD021209)
 * [Suppressed eddy driving during southward excursions of the North Atlantic jet on synoptic to seasonal time scales](https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/asl.937)
-
+* [Extreme moisture transport into the Arctic linked to Rossby wave breaking](https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/2014JD022796)
 
 
 
