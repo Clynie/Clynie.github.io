@@ -63,7 +63,25 @@ sips除了能转换图片格式以外，还可以对图片进行调整大小(res
 * **注意**，上述命令会**直接修改原图片**，如果要保留原图片，则可以加上__–out__ 参数指定输出的文件名。比如`sips -f horizontal house.jpg --out house_horizontal.jpg`
 
 
+## MAC电脑关机卡住黑屏菊花转圈的解决方法
 
+
+### 病症：
+
+出现这个问题很可能是电脑系统升级后的之前第三方的软件应用的历史残留造成的。
+
+###  解决方案:
+
+* 删掉残留文件 /Library/LaunchDaemons/ 和/Library/LaunchAgents/
+	* 步骤1.打开电脑终端
+	* 步骤2.输入命令：`cd /Library`
+	* 步骤3.输入命令：`sudo rm -r -f LaunchDaemons/`
+	* 步骤4.输入命令：`sudo rm -r -f LaunchAgents/`
+	* 步骤5.输入命令:重新启动，在开机时同时按住Command + option + R + P，待响三声即可松手，有时也可能无响声，适当按一会即可，到此布基本大功告成！
+* 备注：残留文件可能只是上面两个文件之一，将存在的文件删除即可
+
+
+* 原文链接：https://blog.csdn.net/Lzy_cool/article/details/81270565
 
 
 

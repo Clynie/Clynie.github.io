@@ -1,9 +1,10 @@
 ---
-layout: post-for-life
+layout: post-for-Video
 title:  "新冠病毒来源于美国？此说法是阴谋论还是合理怀疑？"
 date:   2020-03-20 17:10:26 +0800
 excerpt: "以为B站up主‘NathanRich火锅大王’收集的关于coronavirus新闻报道"
 life: true
+Video: true
 ---
 
 实之前关于coronavirus的报道或者很多阴谋论并不相信，现在也不相信关于阴谋论的说法,或者说实在不会去认为。

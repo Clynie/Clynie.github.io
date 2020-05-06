@@ -14,11 +14,12 @@ project: true
 
 
 
+
 * 纽约大学2020 -《深度学习(pytorch)》课程:
 	* [视频下载地址：https://www.bilibili.com/video/av91314475?p=1](https://www.bilibili.com/video/av91314475?p=1)
 	* [ ppt及参考资料获取地址：https://atcold.github.io/pytorch-Deep-Learning/](https://atcold.github.io/pytorch-Deep-Learning/)
 
-<iframe
+	* <iframe
 	src="//player.bilibili.com/player.html?aid=91314475&bvid=BV197411M7gG&cid=155926970&page=1"
 	scrolling="yes" 
 	border="0" frameborder="no" 
@@ -34,7 +35,7 @@ project: true
 	* [视频下载地址：https://www.bilibili.com/video/av94310884?p=1](https://www.bilibili.com/video/av94310884?p=1)
 	* [ppt及参考资料获取地址：http://speech.ee.ntu.edu.tw/~tlkagk/](http://speech.ee.ntu.edu.tw/~tlkagk/)
 
-<iframe 
+	* <iframe 
 	src="//player.bilibili.com/player.html?aid=94310884&bvid=BV1QE411p7z3&cid=161006931&page=1" 
 	scrolling="no" 
 	border="0" 
