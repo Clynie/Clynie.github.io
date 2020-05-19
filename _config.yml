@@ -60,7 +60,7 @@ weibo:             伊啦啦啦克
 #bilibili:           1503460/
 
 # Gems
-gems:
+plugins:
   - jekyll-mentions
   - jekyll-feed
   - jekyll-sitemap
