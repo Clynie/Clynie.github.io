@@ -9,3 +9,4 @@ notes: true
 
 
 * [https://earth.nullschool.net](https://earth.nullschool.net)
+* [https://lmfit.github.io/lmfit-py/model.html](https://lmfit.github.io/lmfit-py/model.html)
