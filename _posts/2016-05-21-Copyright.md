@@ -34,7 +34,15 @@ life: true
 
 |项目|金额（人民币）|
 |----|-----------|
-|None|0|
+|Don't Starve Together|12|
+|God Among Us|12|
+|Counter-Strike Complete|10|
+|Left 4 Dead 2|7|
+|Terraria|18|
+|Portal Bundle|10|
+|Shadow Tactics: Blades of the Shogun|17|
+|Halo: Spartan Bundle|8|
+|Crawl|12|
 
 # Amazon Kindle版电子书 共0円
 
