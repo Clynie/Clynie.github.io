@@ -93,6 +93,12 @@ notes: true
 ---
 ```
 
+Sometimes the Mirrors here cannot be reached, the mirrors should be replaced, suchas:
+
+```
+gem sources --add https://rubygems.org/
+```
+
 Then Everything goes like markdown
 
 
