@@ -180,6 +180,14 @@ eofs = solver.eofs(neofs=2)
 
 
 
+### module "importlib._bootstrap" has no attribute "SourceFileLoader"
+
+```bash
+python3 -m ensurepip --upgrade
+```
+
+
+
 
 
 
