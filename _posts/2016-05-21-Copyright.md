@@ -42,15 +42,7 @@ life: true
 |Portal Bundle|10|
 |Shadow Tactics: Blades of the Shogun|17|
 |Halo: Spartan Bundle|8|
-|Project Winter|23|
-|Tomb Raider|21|
-|Stick Fight & Trick Tower|69|
-|Fall Guys|69|
-|STAR WARS: Battlefront II|71|
-|Crysis 1~3 |85|
-|Batman Arkham Origins|17|
-|Batman: Arkham Collection|32|
-|Injustice 2 Legendary Edition|40|
+|Crawl|12|
 
 # Amazon Kindle版电子书 共0円
 

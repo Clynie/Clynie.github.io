@@ -133,6 +133,79 @@ def addcyclic(*arr,**kwargs):
 
 ```
 
+
+#### function dedent
+
+```python
+
+
+>>> from mpl_toolkits.basemap import Basemap, addcyclic
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/dxl/anaconda3/lib/python3.8/site-packages/mpl_toolkits/basemap/__init__.py", line 50, in <module>
+    from .proj import Proj
+  File "/Users/dxl/anaconda3/lib/python3.8/site-packages/mpl_toolkits/basemap/proj.py", line 6, in <module>
+    from matplotlib.cbook import dedent
+ImportError: cannot import name 'dedent' from 'matplotlib.cbook' (/Users/dxl/anaconda3/lib/python3.8/site-packages/matplotlib/cbook/__init__.py)
+
+
+```
+HERE IS THE SOLUTION FROM [STACKOVERFLOW](https://stackoverflow.com/questions/63839163/maplotlib-and-basemap-cannot-import-name-dedent)
+
+I was have the same error with importing Basemap from when I pass from python 3.2.7 to 3.3.6.
+The error message comes from the fact that you try to import Basemap from mpl_toolkits.basemap, but the mpl_toolkits.basemap module requires to import the dedent function from the matplotlib.cbook module, but this function is not there. So I guess there were two possible solution : to comment the line which import this function or to copy it. I chose the second option. I don't know why the dedent function is not present in the matplotlib.cbook module.
+
+Here it is the dedent funtion as I found it on the link I put, it was also have for header : @deprecated("3.1", alternative="inspect.cleandoc")
+
+
+```python
+def dedent(s):
+    """
+    Remove excess indentation from docstring *s*.
+
+    Discards any leading blank lines, then removes up to n whitespace
+    characters from each line, where n is the number of leading
+    whitespace characters in the first line. It differs from
+    textwrap.dedent in its deletion of leading blank lines and its use
+    of the first non-blank line to determine the indentation.
+
+    It is also faster in most cases.
+    """
+    # This implementation has a somewhat obtuse use of regular
+    # expressions.  However, this function accounted for almost 30% of
+    # matplotlib startup time, so it is worthy of optimization at all
+    # costs.
+    
+    if not s:      # includes case of s is None
+        return ''
+    
+    match = _find_dedent_regex.match(s)
+    if match is None:
+        return s
+    
+    # This is the number of spaces to remove from the left-hand side.
+    nshift = match.end(1) - match.start(1)
+    if nshift == 0:
+        return s
+
+    # Get a regex that will remove *up to* nshift spaces from the
+    # beginning of each line.  If it isn't in the cache, generate it.
+    unindent = _dedent_regex.get(nshift, None)
+    if unindent is None:
+        unindent = re.compile("\n\r? {0,%d}" % nshift)
+        _dedent_regex[nshift] = unindent
+
+    result = unindent.sub("\n", s).strip()
+    return result
+
+
+
+
+```
+
+
+
+
 ## 添加环境变量
 
 ```bash
@@ -145,6 +218,9 @@ $ python -m pip install ipykernel
 # 添加当前环境下的python到jupyter notebook中的kernel里，如
 $ ipython kernel install --user --name=kernel_env01
 # 启动jupyter notebook之后即可在可选kernels中看到kernel_env01
+$ jupyter kernelspec list
+
+$ jupyter kernelspec remove name
 ```
 
 ## eof.iris
@@ -176,14 +252,6 @@ solver = Eof(sst, weights='coslat')
 
 # retrieve the first two EOFs from the solver class
 eofs = solver.eofs(neofs=2)
-```
-
-
-
-### module "importlib._bootstrap" has no attribute "SourceFileLoader"
-
-```bash
-python3 -m ensurepip --upgrade
 ```
 
 

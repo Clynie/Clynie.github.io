@@ -62,6 +62,10 @@ sips除了能转换图片格式以外，还可以对图片进行调整大小(res
 	* 图片会水平翻转。如果使用vertical, 则会垂直翻转
 * **注意**，上述命令会**直接修改原图片**，如果要保留原图片，则可以加上__–out__ 参数指定输出的文件名。比如`sips -f horizontal house.jpg --out house_horizontal.jpg`
 
+## 视频合并
+```
+ffmpeg -i left.mp4 -i right.mp4 -filter_complex hstack output.mp4
+```
 
 ## MAC电脑关机卡住黑屏菊花转圈的解决方法
 
@@ -81,8 +85,23 @@ sips除了能转换图片格式以外，还可以对图片进行调整大小(res
 * 备注：残留文件可能只是上面两个文件之一，将存在的文件删除即可
 
 
-* 原文链接：https://blog.csdn.net/Lzy_cool/article/details/81270565
+## 制作gif
 
+```
+convert -delay 0 -loop 0 *.tif myanimated.gif
+convert -resize 20% -delay 20 -loop 0 *.jpg myimage.gif
+convert -resize 768x576 -delay 20 -loop 0 *.jpg myimage.gif
+convert -resize 768x576 -delay 20 -loop 0 `ls -v` myimage.gif
+convert -resize 50% -delay 10 -loop 0 image_{0..99}.jpg output.gif
+ffmpeg \
+  -framerate 60 \
+  -pattern_type glob \
+  -i '*.png' \
+  -r 15 \
+  -vf scale=512:-1 \
+  out.gif \
+;
+```
 
 
 
